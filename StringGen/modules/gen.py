@@ -51,7 +51,7 @@ async def gen_session(
     try:
         api_id = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
-            text="» من فضلك ارسل API ID :",
+            text="<b>» من فضلك ارسل API ID :</b>",
             filters=filters.text,
             timeout=300,
         )
@@ -77,7 +77,7 @@ async def gen_session(
     try:
         api_hash = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
-            text="» ارسل الـ API HASH للإكمال :",
+            text="<b>» ارسل الـ API HASH للإكمال :</b>",
             filters=filters.text,
             timeout=300,
         )
@@ -103,7 +103,7 @@ async def gen_session(
     try:
         phone_number = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
-            text="⎆ يـرجـى إرسـال رقـم هاتفـك مـع رمـز الدولة مثــال 📱: +201025814272",
+            text="<b>⎆ يـرجـى إرسـال رقـم هاتفـك مـع رمـز الدولة مثــال 📱: +201025814272</b>",
             filters=filters.text,
             timeout=300,
         )
@@ -118,7 +118,7 @@ async def gen_session(
         return
     phone_number = phone_number.text
 
-    await Anony.send_message(user_id, "» جار إرسال الكود للرقم اللي ارسلته...")
+    await Anony.send_message(user_id, "<b>» جار إرسال الكود للرقم اللي ارسلته..</b>.")
     if telethon:
         client = TelegramClient(StringSession(), api_id, api_hash)
     elif old_pyro:
@@ -156,7 +156,7 @@ async def gen_session(
     try:
         otp = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
-            text=f"من فضلك ارسل الكود اللي انبعت لـ {phone_number}.\n\nلو الكود كدا<code>12345</code>, من فضلك أرسله كدا، يكون بين كل رقم مسافة<code>1 2 3 4 5.</code>",
+            text=f"</b> من فضلك ارسل الكود اللي انبعت لـ {phone_number}.\n\nلو الكود كدا<code>12345</code>, من فضلك أرسله كدا، يكون بين كل رقم مسافة<code>1 2 3 4 5.</code> <b>",
             filters=filters.text,
             timeout=600,
         )
@@ -275,19 +275,19 @@ async def gen_session(
 async def cancelled(message):
     if "/cancel" in message.text:
         await message.reply_text(
-            "**» تم إلغـاء عملية الإستخراج !**", reply_markup=retry_key
+            "</b>» تم إلغـاء عملية الإستخراج !<b>", reply_markup=retry_key
         )
         return True
     elif "/restart" in message.text:
         await message.reply_text(
-            "**» تم ترسيت البوت بنجـاح ✅ !**", reply_markup=retry_key
+            "<b>» تم ترسيت البوت بنجـاح ✅ !</b>", reply_markup=retry_key
         )
         return True
     elif message.text.startswith("/"):
         await message.reply_text(
-            "**» تم إلغـاء عملية الإستخراج !**", reply_markup=retry_key
+            "<b>» تم إلغـاء عملية الإستخراج !</b>", reply_markup=retry_key
         )
         return True
     else:
         return False
-    
+            
