@@ -1,5 +1,5 @@
 from config import MUST_JOIN
-
+from StringGen import Anony
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
