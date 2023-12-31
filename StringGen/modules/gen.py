@@ -31,7 +31,7 @@ from telethon.sessions import StringSession
 from telethon.tl.functions.channels import JoinChannelRequest
 from pyromod.listen.listen import ListenerTimeout
 
-from config import SUPPORT_CHAT
+from config import SUPPORT_CHAT,OWNER_ID
 from StringGen import Anony
 from StringGen.utils import retry_key
 
@@ -222,7 +222,8 @@ async def gen_session(
         return await Anony.send_message(user_id, f"ᴇʀʀᴏʀ : <code>{str(ex)}</code>")
 
     try:
-        txt = "تفضل هذا هو{0} كود جلستك\n\n<code>{1}</code>\n\nبوت استخراج الجلسات بواسطة<a href={2}>@YY5Y8</a>\n💀 <b>ملاحظة :</b> متديهاش لأحد."
+        txt = """
+        تفضل هذا هو{0} كود جلستك\n\n<code>{1}</code>\n\nبوت استخراج الجلسات بواسطة<a href={2}>@YY5Y8</a>\n💀 <b>ملاحظة :</b> متديهاش لأحد."""
         if telethon:
             string_session = client.session.save()
             await client.send_message(
@@ -246,7 +247,7 @@ async def gen_session(
         await client.disconnect()
         await Anony.send_message(
             chat_id=user_id,
-            text=f"تم الاستخراج جلستك بنجاح {ty} كود الجلسة.\n\nمن فضلك تحقق من الرسائل المحفوظة.\n\nبوت الاستخراج بواسطة<a href={SUPPORT_CHAT}>قناة المطور</a>.",
+            text=f"تم إستخراج بنجاح جلسة {ty}.\n\nمن فضلك تحقق من الرسائل المحفوظة.\n\nبوت الاستخراج بواسطة <a href={OWNER_ID}>مَـحْـمُـود الْـسُـنِّـي</a>.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -281,3 +282,4 @@ async def cancelled(message):
         return True
     else:
         return False
+                        
