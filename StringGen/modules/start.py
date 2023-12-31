@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-
+from config import OWNER_ID
 from StringGen import Anony
 from StringGen.utils import add_served_user, keyboard
 
