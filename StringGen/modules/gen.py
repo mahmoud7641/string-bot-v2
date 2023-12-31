@@ -40,11 +40,11 @@ async def gen_session(
     message, user_id: int, telethon: bool = False, old_pyro: bool = False
 ):
     if telethon:
-        ty = f"<b>تليثون</b> | 𝐭𝐞𝐥𝐞𝐭𝐡𝐨𝐧"
+        ty = f"<b>تليثون</b>"
     elif old_pyro:
-        ty = f"<b>بايروجورام</b>| 𝐯𝟏  𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐯𝟏"
+        ty = f"<b>بايروجورام</b> 𝐯𝟏"
     else:
-        ty = f"<b>بايروجورام</b>| 𝐯𝟐  𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐯𝟐"
+        ty = f"<b>بايروجورام</b> 𝐯𝟐"
 
     await message.reply_text(f"» جار بدأ استخراج جلسة {ty}...")
 
@@ -156,7 +156,7 @@ async def gen_session(
     try:
         otp = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
-            text=f"</b> من فضلك ارسل الكود اللي انبعت لـ {phone_number}.\n\nلو الكود كدا<code>12345</code>, من فضلك أرسله كدا، يكون بين كل رقم مسافة<code>1 2 3 4 5.</code> <b>",
+            text=f"</b> من فضلك ارسل الكود اللي انبعت لـ {phone_number}.\n\nلو الكود كدا <code>12345</code> , من فضلك :أرسله كدا، يكون بين كل رقم مسافة <code>1 2 3 4 5.</code> <b>",
             filters=filters.text,
             timeout=600,
         )
@@ -290,4 +290,4 @@ async def cancelled(message):
         return True
     else:
         return False
-    
+        
