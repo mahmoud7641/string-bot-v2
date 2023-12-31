@@ -191,7 +191,7 @@ async def gen_session(
         try:
             pwd = await Anony.ask(
                 identifier=(message.chat.id, user_id, None),
-                text="» من فضلك ارسل كلمة سر تحقق الخطوتين للإكمال:",
+                text="</b>» من فضلك ارسل كلمة سر تحقق الخطوتين للإكمال<b>",
                 filters=filters.text,
                 timeout=300,
             )
@@ -290,4 +290,4 @@ async def cancelled(message):
         return True
     else:
         return False
-        
+    
