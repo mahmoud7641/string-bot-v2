@@ -1,17 +1,53 @@
-from os import getenv
-
-from dotenv import load_dotenv
-
-load_dotenv()
-
-
-API_ID = int(getenv("API_ID"))
-API_HASH = getenv("API_HASH")
-
-BOT_TOKEN = getenv("BOT_TOKEN")
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-
-OWNER_ID = int(getenv("OWNER_ID", 5488301592))
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/YY5Y8")
-
-MUST_JOIN = getenv("MUST_JOIN", None)
+{
+    "name": "String Gen Bot",
+    "description": "A Telegram Bot to generate Telethon and Pyrogram String Session.",
+    "logo": "https://telegra.ph/file/654ddaf472f18b799600b.jpg",
+    "keywords": [
+        "python3",
+        "telegram",
+        "session",
+        "stringbot",
+        "telegram-bot",
+        "pyrogram",
+        "telethon"
+    ],
+    "repository": "https://github.com/AnonymousX1025/StringGenBot",
+    "env": {
+      "API_ID": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot's token from Botfather",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "Fill your user id here. (Must be integer)",
+        "value": "",
+        "required": true
+        },
+    "MUST_JOIN": {
+      "description": "الاشتراك الاجباري, ضع معؤف قناتك بدون(@), و اضف البوت مشرف بها",
+      "required": true,
+      "value": "YY5Y8"
+      },
+      "MONGO_DB_URI": {
+        "description": "Get this value from cloud.mongodb.com",
+        "value": "",
+        "required": true
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          }
+      ],
+      "stack": "container"
+}
