@@ -1,6 +1,5 @@
-from pyrogram import filters
-from pyrogram.types import Message
-
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from StringGen import Anony
 from StringGen.utils import add_served_user, keyboard
 
