@@ -156,7 +156,7 @@ async def gen_session(
     try:
         otp = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
-            text=f"</b> من فضلك ارسل الكود اللي انبعت لـ {phone_number}.\n\nلو الكود كدا <code>12345</code> , من فضلك :أرسله كدا، يكون بين كل رقم مسافة <code>1 2 3 4 5.</code> <b>",
+            text=f"<b> من فضلك ارسل الكود اللي انبعت لـ {phone_number}.\n\nلو الكود كدا <code>12345</code> , من فضلك :أرسله كدا، يكون بين كل رقم مسافة <code>1 2 3 4 5.</code> </b>",
             filters=filters.text,
             timeout=600,
         )
@@ -191,7 +191,7 @@ async def gen_session(
         try:
             pwd = await Anony.ask(
                 identifier=(message.chat.id, user_id, None),
-                text="</b>» من فضلك ارسل كلمة سر تحقق الخطوتين للإكمال<b>",
+                text="<b>» من فضلك ارسل كلمة سر تحقق الخطوتين للإكمال</b>",
                 filters=filters.text,
                 timeout=300,
             )
@@ -290,4 +290,4 @@ async def cancelled(message):
         return True
     else:
         return False
-    
+        
