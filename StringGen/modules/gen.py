@@ -219,11 +219,17 @@ async def gen_session(
             )
 
     except Exception as ex:
-        return await Anony.send_message(user_id, f"ᴇʀʀᴏʀ : <code>{str(ex)}</code>")
+        return await Anony.send_message(user_id, f"خطأ : <code>{str(ex)}</code>")
 
     try:
         txt = """
-        تفضل هذا هو{0} كود جلستك\n\n<code>{1}</code>\n\nبوت استخراج الجلسات بواسطة<a href={2}>@YY5Y8</a>\n💀 <b>ملاحظة :</b> متديهاش لأحد."""
+        >تم استخراج كود جلستك من:< @ENO6bot
+>{0}<
+<code>{1}</\
+>المطور:< @VL_VD
+>انـتـبـه❗:< لا تعطي كود جلستك لأي شخص، يمكن له اختراق او حذف حسابك بواسطة الكود!
+>قناة المطور:< @YY5Y8
+"""
         if telethon:
             string_session = client.session.save()
             await client.send_message(
@@ -282,4 +288,4 @@ async def cancelled(message):
         return True
     else:
         return False
-                        
+    
