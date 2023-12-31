@@ -224,7 +224,7 @@ async def gen_session(
     try:
         txt = """
                 <b>تم استخراج كود جلستك من:</b> @ENO6bot
-<b>نوع الجلسة:</b> {0}
+نوع الجلسة: {0}
 
 <code>{1}</code>
 
