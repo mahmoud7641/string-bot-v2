@@ -49,13 +49,3 @@ async def CHECK_USER_JOIN(api_key, channls_join: list, user_id : int):
     return r,c
 
 BOT_CHANNL = ['YY5Y8']
-
-
-@Anony.on_message(filters.regex('^/start$') & filters.private)
-async def START_BOT(_, message: types.Message):
-    chat_id, message_id, user_id = message.chat.id, message.id, message.from_user.id
-    join_, channl = await CHECK_USER_JOIN(API_KEY,BOT_CHANNL, user_id)
-    if not join_:
-        await Anony.send_message(chat_id=chat_id, text=BOT_MESSAGE['JOIN_CHANLL'].format(channl), reply_markup=CHECK_JOIN_KEYBOARD(channl))
-        return 
-    await Anony.send_message(chat_id, 'مرحبا بك .')
