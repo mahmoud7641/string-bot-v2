@@ -59,15 +59,3 @@ async def START_BOT(_, message: types.Message):
         await Anony.send_message(chat_id=chat_id, text=BOT_MESSAGE['JOIN_CHANLL'].format(channl), reply_markup=CHECK_JOIN_KEYBOARD(channl))
         return 
     await Anony.send_message(chat_id, 'مرحبا بك .')
-
-
-@Anony.on_callback_query(filters.regex('^checkjoin$'))
-async def CHAECK_JOIN(_, query: types.CallbackQuery):
-    await Anony.edit_message_text(text='انتضر جاري التحقق من الاشتراك ⚙️.', reply_markup=REDRESH_LANSHER('تحقق من الاشتراك♻️⚙️.'), chat_id=query.message.chat.id, message_id=query.message.id)
-    await asyncio.sleep(0.3)
-    join_, channl = await CHECK_USER_JOIN(API_KEY, BOT_CHANNL, query.from_user.id)
-    if not join_:
-        await Anony.edit_message_text(text=BOT_MESSAGE['JOIN_CHANLL'].format(channl), reply_markup=CHECK_JOIN_KEYBOARD(channl) ,chat_id= query.message.chat.id, message_id=query.message.id)    
-        await Anony.answer_callback_query(query.id, 'تأكد من اشتراك في القناة و اعد المحاولا ✅〽️.', show_alert=True)  
-        return
-    await Anony.edit_message_text(text=BOT_MESSAGE['DONE_JOIN_CHANNL'], chat_id= query.message.chat.id, message_id=query.message.id)
