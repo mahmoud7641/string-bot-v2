@@ -1,5 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
+
 from StringGen import Anony
 from StringGen.utils import add_served_user, keyboard
 
@@ -14,9 +15,7 @@ async def f_start(_, message: Message):
 
 ¤¦  تـلـيـثـون 
 
-¤¦ بايـروجـرام  
-
-¤¦ تم انشاء البوت بواسطة [مَـحْـمُـود الْـسُـنٌِـي](https://t.me/VL_VD)""",
+¤¦ بايـروجـرام  """,
         reply_markup=keyboard,
         disable_web_page_preview=True,
     )
