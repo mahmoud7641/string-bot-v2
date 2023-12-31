@@ -42,9 +42,9 @@ async def gen_session(
     if telethon:
         ty = f"<b>تليثون</b> | 𝐭𝐞𝐥𝐞𝐭𝐡𝐨𝐧"
     elif old_pyro:
-        ty = f"<b>بايروجورام</b> 𝐯𝟏 | 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐯𝟏"
+        ty = f"<b>بايروجورام</b>| 𝐯𝟏  𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐯𝟏"
     else:
-        ty = f"<b>بايروجورام</b> 𝐯𝟐 | 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐯𝟐"
+        ty = f"<b>بايروجورام</b>| 𝐯𝟐  𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐯𝟐"
 
     await message.reply_text(f"» جار بدأ استخراج جلسة {ty}...")
 
