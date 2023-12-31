@@ -15,7 +15,9 @@ async def f_start(_, message: Message):
 
 ¤¦  تـلـيـثـون 
 
-¤¦ بايـروجـرام  """,
+¤¦ بايـروجـرام 
+
+¤¦ تم انشاء البوت بواسطة:  <a href={OWNER_ID}>مَـحْـمُـود الْـسُـنِّـي</a>""",
         reply_markup=keyboard,
         disable_web_page_preview=True,
     )
