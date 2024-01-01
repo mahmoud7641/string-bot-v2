@@ -1,4 +1,4 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup,Message
 
 from config import SUPPORT_CHAT,OWNER_ID
 
@@ -19,9 +19,7 @@ keyboard = InlineKeyboardMarkup(
                     InlineKeyboardButton("اوامـر الـبـوت", url="https://telegra.ph/%D8%A7%D9%88%D8%A7%D9%85%D8%B1-%D8%A8%D9%88%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AE%D8%B1%D8%A7%D8%AC-10-11")
                 ]
             ]
-        ),
-        disable_web_page_preview=True,
-    )
+        )
 
 gen_key = InlineKeyboardMarkup(
     [
