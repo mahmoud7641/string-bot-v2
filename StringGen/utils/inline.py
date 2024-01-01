@@ -6,7 +6,7 @@ from config import SUPPORT_CHAT,OWNER_ID
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="بدا استخراج الجلسة 🖥️", callback_data="generate")
+                    InlineKeyboardButton(text="بدا استخراج الجلسة 🖥️", callback_data="gensession")
                     ],
                     [
                     InlineKeyboardButton("سـورس مـحـمـود - Mahmoud", url="t.me/YY5Y8")
@@ -32,5 +32,5 @@ gen_key = InlineKeyboardMarkup(
 )
 
 retry_key = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="حاول مجدداً", callback_data="gensession")]]
+    [[InlineKeyboardButton(text="استخرج مجدداً", callback_data="gensession")]]
 )
