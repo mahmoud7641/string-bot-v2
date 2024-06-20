@@ -1,1 +1,1 @@
-worker: bash start
+gunicorn start:start
