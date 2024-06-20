@@ -1,1 +1,1 @@
-'gunicorn start:start'
+'gunicorn: start:start'
